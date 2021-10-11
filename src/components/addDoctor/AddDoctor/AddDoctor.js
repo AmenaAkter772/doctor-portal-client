@@ -24,8 +24,7 @@ const AddDoctor = () => {
 
         fetch('http://localhost:5000/addADoctor', {
             method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(formData)
+            body: formData
         })
         .then(response => response.json())
         .then(data => {

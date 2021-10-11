@@ -6,6 +6,9 @@
 .sidebar li{
     margin-bottom: 2em;
 }
+.link {
+    text-decoration: none;
+}
 .sidebar li:hover{
     background-color: #a0e1eb ;
     width: 100%;
