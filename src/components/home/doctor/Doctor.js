@@ -7,7 +7,7 @@ const Doctor = ({doctor}) => {
     console.log(doctor);
 
     const handleDelete = (e, id) => {
-        fetch(`http://localhost:5000/deleteDoctor/${id}`, {
+        fetch(`https://salty-citadel-54178.herokuapp.com/deleteDoctor/${id}`, {
             method: 'DELETE'
         })
         .then(res=> res.json())
