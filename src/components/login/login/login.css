@@ -1,0 +1,35 @@
+.loginButton{
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+}
+.createLine {
+    font-family: sans-serif;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    max-width: 600px;
+    position: relative;
+  }
+  .createLine:before {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: black;
+    left: 0;
+    top: 50%;
+    position: absolute;
+    opacity: 40%;
+  }
+  .createLine:after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: black;
+    right: 0;
+    top: 50%;
+    position: absolute;
+    opacity: 40%;
+  }

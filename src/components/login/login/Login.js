@@ -1,5 +1,6 @@
 
 import React, { useContext, useState } from 'react';
+import './login.css'
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import { UserContext } from '../../../App';
@@ -90,7 +91,7 @@ const Login = () => {
   return (
     <div className="login-page container">
       <div className="row align-items-center" style={{ height: "100vh" }}>
-        <div className="col-md-6 shadow p-5">
+        <div className="col-md-5 shadow p-5">
           <div className="form-field">
             <h3 className="mb-2">Login Form</h3>
             <form onSubmit={submitHandle}>
@@ -100,13 +101,15 @@ const Login = () => {
               {
                 newUser ? <small style={{ opacity: '75%' }}>Minimum eight characters, at least 1 letter, 1 number</small> : <small></small>
               }<br />
-              <input className="btn-brand mt-4" type="submit" value={newUser ? 'Sing Up' : 'Sing In'} />
-              {!newUser ? <p style={{ cursor: 'pointer', color: 'blue' }} className="my-4" onClick={() => setNewUser(!newUser)}>Create an account</p> : <p style={{ cursor: 'pointer', color: 'blue' }} className="my-4" onClick={() => setNewUser(!newUser)}>Already have an account</p>}
+              <div className="loginButton">
+                <input className="btn-brand mt-4" type="submit" value={newUser ? 'Create An Account' : 'Login'} />
+              </div>
+              {!newUser ? <p  className="my-4" style={{ textAlign: 'center',}}>Don't have an account ?<span style={{ cursor: 'pointer', color: 'blue' }} className="my-4" onClick={() => setNewUser(!newUser)}> Create an account</span></p> : <p  className="my-4" style={{ textAlign: 'center',}}>Already have an account ?<span style={{ cursor: 'pointer', color: 'blue' }} onClick={() => setNewUser(!newUser)}> login</span></p>}
             </form>
             <>
-              <p>Or connect with another account</p>
+              <p className="createLine">Or</p>
               <div className="d-flex justify-content-center align-items-center gap-2">
-                <button className="btn-brand" onClick={handleGoogleSignIn}>Google Sign in</button>
+                <button className="btn-brand mt-4" onClick={handleGoogleSignIn}>Google Sign in</button>
               </div>
             </>
           </div>
